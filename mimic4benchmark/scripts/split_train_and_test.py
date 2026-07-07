@@ -32,7 +32,8 @@ def main():
 
     folders = os.listdir(args.subjects_root_path) #è come se caricasse male i nomi delle cartelle mette delle cifre all' inizio
     #print(folders)
-    folders = list((filter(str.isdigit, folders)))
+    #folders = list((filter(str.isdigit, folders)))
+    folders = [f for f in folders if f.isdigit()]
 
     #devo modificare gli elementi della lista per matchare
     #print(type(folders))

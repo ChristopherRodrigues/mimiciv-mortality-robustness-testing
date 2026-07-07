@@ -21,7 +21,7 @@ def read_patients_table(mimic4_path):
 
 def read_admissions_table(mimic4_path):
     admits = dataframe_from_csv(os.path.join(mimic4_path, 'ADMISSIONS.csv'))
-    admits = admits[['SUBJECT_ID', 'HADM_ID', 'ADMITTIME', 'DISCHTIME', 'DEATHTIME', 'ETHNICITY']]
+    admits = admits[['SUBJECT_ID', 'HADM_ID', 'ADMITTIME', 'DISCHTIME', 'DEATHTIME', 'RACE']]
     admits.ADMITTIME = pd.to_datetime(admits.ADMITTIME)
     admits.DISCHTIME = pd.to_datetime(admits.DISCHTIME)
     admits.DEATHTIME = pd.to_datetime(admits.DEATHTIME)
@@ -202,14 +202,20 @@ def read_events_table_and_break_up_by_subject(mimic4_path, table, output_path,
 
         if (subjects_to_keep is not None) and (row['subject_id'] not in subjects_to_keep):##problema qui
             continue
-        if (items_to_keep is not None) and (row['itemid'] not in items_to_keep):
+        #if (items_to_keep is not None) and (row['itemid'] not in items_to_keep):
+        #    continue
+
+        itemid = str(row['itemid']).strip()
+
+        if (items_to_keep is not None) and (itemid not in items_to_keep):
             continue
 
         row_out = {'SUBJECT_ID': row['subject_id'],
                    'HADM_ID': row['hadm_id'],
                    'ICUSTAY_ID': '' if 'icustay_id' not in row else row['stay_id'],
                    'CHARTTIME': row['charttime'],
-                   'ITEMID': row['itemid'],
+                   'ITEMID': int(itemid),
+                   #'ITEMID': row['itemid'],
                    'VALUE': row['value'],
                    'VALUEUOM': row['valueuom']}
         if data_stats.curr_subject_id != '' and data_stats.curr_subject_id != row['subject_id']:

@@ -2,30 +2,67 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 import numpy as np
-from sklearn import metrics
+import seaborn as sns
+import matplotlib.pyplot as plt
+import os
 
+from sklearn import metrics
+from sklearn.metrics import roc_curve, auc
+from sklearn.metrics import precision_recall_curve, average_precision_score
 
 # for decompensation, in-hospital mortality
 
-def print_metrics_binary(y_true, predictions, verbose=1):
+def print_metrics_binary(y_true, predictions, title, result_dir, threshold=0.5, verbose=0):
     predictions = np.array(predictions)
-    if len(predictions.shape) == 1:
-        predictions = np.stack([1 - predictions, predictions]).transpose((1, 0))
+    #if len(predictions.shape) == 1:
+      #  predictions = np.stack([1 - predictions, predictions]).transpose((1, 0))
 
-    cf = metrics.confusion_matrix(y_true, predictions.argmax(axis=1))
+    #cf = metrics.confusion_matrix(y_true, predictions.argmax(axis=1))
+    if len(predictions.shape) == 1:
+        probs = predictions
+    else:
+        probs = predictions[:, 1]
+
+    pred_labels = (probs >= threshold).astype(int)
+
+    cf = metrics.confusion_matrix(y_true, pred_labels)
+    print("confusion matrix:")
+    print(cf)
+    plt.figure(figsize=(5,4))
+    sns.heatmap(cf, annot=True, fmt="d", cmap="Blues",
+                xticklabels=["No event", "Event"],
+                yticklabels=["No event", "Event"])
+
+    plt.xlabel("Predicted")
+    plt.ylabel("True")
+    plt.title(title)
+    plt.tight_layout()
+    #plt.savefig(os.path.join(result_dir, "confusion_matrix.png"), dpi=300)
+    safe_title = title.replace(" ", "_").lower()
+    if result_dir is not None:
+        os.makedirs(result_dir, exist_ok=True)
+
+        plt.savefig(
+            os.path.join(result_dir, f"confusion_matrix_{safe_title}.png"),
+            dpi=300
+        )
+    plt.close()
     if verbose:
         print("confusion matrix:")
         print(cf)
     cf = cf.astype(np.float32)
 
     acc = (cf[0][0] + cf[1][1]) / np.sum(cf)
-    prec0 = cf[0][0] / (cf[0][0] + cf[1][0])
-    prec1 = cf[1][1] / (cf[1][1] + cf[0][1])
-    rec0 = cf[0][0] / (cf[0][0] + cf[0][1])
-    rec1 = cf[1][1] / (cf[1][1] + cf[1][0])
-    auroc = metrics.roc_auc_score(y_true, predictions[:, 1])
+    prec0 = cf[0][0] / (cf[0][0] + cf[1][0] + 1e-8)
+    prec1 = cf[1][1] / (cf[1][1] + cf[0][1] + 1e-8)
+    rec0 = cf[0][0] / (cf[0][0] + cf[0][1] + 1e-8)
+    rec1 = cf[1][1] / (cf[1][1] + cf[1][0] + 1e-8)
+    #auroc = metrics.roc_auc_score(y_true, predictions[:, 1])
 
-    (precisions, recalls, thresholds) = metrics.precision_recall_curve(y_true, predictions[:, 1])
+    #(precisions, recalls, thresholds) = metrics.precision_recall_curve(y_true, predictions[:, 1])
+    auroc = metrics.roc_auc_score(y_true, probs)
+
+    (precisions, recalls, thresholds) = metrics.precision_recall_curve(y_true, probs)
     auprc = metrics.auc(recalls, precisions)
     minpse = np.max([min(x, y) for (x, y) in zip(precisions, recalls)])
 
@@ -48,6 +85,36 @@ def print_metrics_binary(y_true, predictions, verbose=1):
             "auprc": auprc,
             "minpse": minpse}
 
+def plot_roc_curve(y_true, y_prob, title, result_dir):
+    fpr, tpr, _ = roc_curve(y_true, y_prob)
+    roc_auc = auc(fpr, tpr)
+
+    plt.figure(figsize=(5,4))
+    plt.plot(fpr, tpr, label=f"AUROC = {roc_auc:.3f}")
+    plt.plot([0, 1], [0, 1], linestyle="--", color="gray")
+
+    plt.xlabel("False Positive Rate")
+    plt.ylabel("True Positive Rate")
+    plt.title(title)
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig(os.path.join(result_dir, "AUROC.png"), dpi=300)
+    plt.close()
+
+def plot_pr_curve(y_true, y_prob, title, result_dir):
+    precision, recall, _ = precision_recall_curve(y_true, y_prob)
+    auprc = average_precision_score(y_true, y_prob)
+
+    plt.figure(figsize=(5,4))
+    plt.plot(recall, precision, label=f"AUPRC = {auprc:.3f}")
+
+    plt.xlabel("Recall")
+    plt.ylabel("Precision")
+    plt.title(title)
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig(os.path.join(result_dir, "AUPRC.png"), dpi=300)
+    plt.close()
 
 # for phenotyping
 

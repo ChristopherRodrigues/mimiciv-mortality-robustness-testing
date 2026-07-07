@@ -8,6 +8,13 @@ import random
 
 from mimic4models.feature_extractor import extract_features
 
+def safe_float(x):
+    try:
+        if x in ['___', '', 'NA', 'nan', 'None']:
+            return np.nan
+        return float(x)
+    except:
+        return np.nan
 
 def convert_to_dict(data, header, channel_info):
     """ convert data from readers output in to array of arrays format """
@@ -17,7 +24,8 @@ def convert_to_dict(data, header, channel_info):
         channel = header[i]
         if len(channel_info[channel]['possible_values']) != 0:
             ret[i-1] = list(map(lambda x: (x[0], channel_info[channel]['values'][x[1]]), ret[i-1]))
-        ret[i-1] = list(map(lambda x: (float(x[0]), float(x[1])), ret[i-1]))
+        #ret[i-1] = list(map(lambda x: (float(x[0]), float(x[1])), ret[i-1]))
+        ret[i-1] = [(safe_float(x[0]), safe_float(x[1]))for x in ret[i-1]]
     return ret
 
 

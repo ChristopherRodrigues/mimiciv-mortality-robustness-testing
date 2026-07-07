@@ -5,6 +5,36 @@
     "Systolic blood pressure": {
         "possible_values": []
     },
+    "Bilirubin": {
+        "possible_values": []
+    },
+    "Creatinine": {
+        "possible_values": []
+    },
+    "Hematocrit": {
+        "possible_values": []
+    },
+    "Hemoglobin": {
+        "possible_values": []
+    },
+    "Lactate": {
+    "possible_values": []
+    },
+    "Platelets": {
+        "possible_values": []
+    },
+    "Potassium": {
+        "possible_values": []
+    },
+    "Prothrombin time": {
+        "possible_values": []
+    },
+    "Sodium": {
+        "possible_values": []
+    },
+    "White blood cell count": {
+        "possible_values": []
+    },
     "Glascow coma scale verbal response": {
         "possible_values": ["1 No Response", "1.0 ET/Trach", "2 Incomp sounds", "3 Inapprop words", "4 Confused", "5 Oriented", "Confused", "Inappropriate Words", "Incomprehensible sounds", "No Response", "No Response-ETT", "Oriented"],
         "values": {

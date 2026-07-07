@@ -3,7 +3,7 @@ from __future__ import print_function
 
 from keras.models import Model
 from keras.layers import Input, Dense, LSTM, Masking, Dropout
-from keras.layers.wrappers import Bidirectional, TimeDistributed
+from keras.layers import Bidirectional, TimeDistributed
 from mimic4models.keras_utils import LastTimestep
 from mimic4models.keras_utils import ExtendMask
 
@@ -12,7 +12,7 @@ class Network(Model):
 
     def __init__(self, dim, batch_norm, dropout, rec_dropout, task,
                  target_repl=False, deep_supervision=False, num_classes=1,
-                 depth=1, input_dim=76, **kwargs):
+                 depth=1, input_dim=96, **kwargs):
 
         print("==> not used params in network class:", kwargs.keys())
 
@@ -38,6 +38,7 @@ class Network(Model):
         mX = Masking()(X)
 
         if deep_supervision:
+            print("Using deep supervision")
             M = Input(shape=(None,), name='M')
             inputs.append(M)
 

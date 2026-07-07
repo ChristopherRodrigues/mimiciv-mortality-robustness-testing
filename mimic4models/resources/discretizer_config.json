@@ -1,6 +1,8 @@
 {
   "id_to_channel": [
+    "Bilirubin",
     "Capillary refill rate",
+    "Creatinine",
     "Diastolic blood pressure",
     "Fraction inspired oxygen",
     "Glascow coma scale eye opening",
@@ -10,16 +12,26 @@
     "Glucose",
     "Heart Rate",
     "Height",
+    "Hematocrit",
+    "Hemoglobin",
+    "Lactate",
     "Mean blood pressure",
     "Oxygen saturation",
+    "Platelets",
+    "Potassium",
+    "Prothrombin time",
     "Respiratory rate",
+    "Sodium",
     "Systolic blood pressure",
     "Temperature",
     "Weight",
+    "White blood cell count",
     "pH"
   ],
   "is_categorical_channel": {
+    "Bilirubin": false,
     "Capillary refill rate": true,
+    "Creatinine": false,
     "Diastolic blood pressure": false,
     "Fraction inspired oxygen": false,
     "Glascow coma scale eye opening": true,
@@ -29,19 +41,29 @@
     "Glucose": false,
     "Heart Rate": false,
     "Height": false,
+    "Hematocrit": false,
+    "Hemoglobin": false,
+    "Lactate": false,
     "Mean blood pressure": false,
     "Oxygen saturation": false,
+    "Platelets": false,
+    "Potassium": false,
+    "Prothrombin time": false,
     "Respiratory rate": false,
+    "Sodium": false,
     "Systolic blood pressure": false,
     "Temperature": false,
     "Weight": false,
+    "White blood cell count": false,
     "pH": false
   },
   "possible_values": {
+    "Bilirubin": [],
     "Capillary refill rate": [
       "0.0",
       "1.0"
     ],
+    "Creatinine": [],
     "Diastolic blood pressure": [
 
     ],
@@ -110,15 +132,22 @@
     "Height": [
 
     ],
+    "Hematocrit": [],
+    "Hemoglobin": [],
+    "Lactate": [],
     "Mean blood pressure": [
 
     ],
     "Oxygen saturation": [
 
     ],
+    "Platelets": [],
+    "Potassium": [],
+    "Prothrombin time": [],
     "Respiratory rate": [
 
     ],
+    "Sodium": [],
     "Systolic blood pressure": [
 
     ],
@@ -128,12 +157,15 @@
     "Weight": [
 
     ],
+    "White blood cell count": [],
     "pH": [
 
     ]
   },
   "normal_values": {
+    "Bilirubin": "1.0",
     "Capillary refill rate": "0.0",
+    "Creatinine": "1.0",
     "Diastolic blood pressure": "59.0",
     "Fraction inspired oxygen": "0.21",
     "Glascow coma scale eye opening": "4 Spontaneously",
@@ -143,12 +175,20 @@
     "Glucose": "128.0",
     "Heart Rate": "86",
     "Height": "170.0",
+    "Hematocrit": "40.0",
+    "Hemoglobin": "13.5",
+    "Lactate": "1.5",
     "Mean blood pressure": "77.0",
     "Oxygen saturation": "98.0",
+    "Platelets": "250.0",
+    "Potassium": "4.0",
+    "Prothrombin time": "13.0",
     "Respiratory rate": "19",
+    "Sodium": "140.0",
     "Systolic blood pressure": "118.0",
     "Temperature": "36.6",
     "Weight": "81.0",
+    "White blood cell count": "8.0",
     "pH": "7.4"
   }
 }

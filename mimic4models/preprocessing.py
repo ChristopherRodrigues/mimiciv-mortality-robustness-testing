@@ -31,12 +31,30 @@ class Discretizer:
         self._empty_bins_sum = 0
         self._unused_data_sum = 0
 
+    @staticmethod
+    def safe_float(value):
+        try:
+            v = float(value)
+            if np.isfinite(v):
+                return v
+            else:
+                return np.nan
+        except:
+            return np.nan
+
     def transform(self, X, header=None, end=None):
         if header is None:
             header = self._header
+            # CRITICAL CONSISTENCY CHECK
+            #for i in range(1, min(len(header), len(self._id_to_channel) + 1)):
+                #if header[i] != self._id_to_channel[i-1]:
+                    #print("🚨 MISALIGNMENT at index", i)
+                    #print("header:", header[i])
+                    #print("channel:", self._id_to_channel[i-1])
+                    #break
         assert header[0] == "Hours"
         eps = 1e-6
-
+        #print(self._id_to_channel)
         N_channels = len(self._id_to_channel)
         ts = [float(row[0]) for row in X]
         for i in range(len(ts) - 1):
@@ -84,7 +102,8 @@ class Discretizer:
                 for pos in range(N_values):
                     data[bin_id, begin_pos[channel_id] + pos] = one_hot[pos]
             else:
-                data[bin_id, begin_pos[channel_id]] = float(value)
+                #data[bin_id, begin_pos[channel_id]] = float(value)
+                data[bin_id, begin_pos[channel_id]] = self.safe_float(value)
 
         for row in X:
             t = float(row[0]) - first_time
@@ -94,7 +113,7 @@ class Discretizer:
             assert 0 <= bin_id < N_bins
 
             for j in range(1, len(row)):
-                if row[j] == "":
+                if row[j] in ["", "___"]:
                     continue
                 channel = header[j]
                 channel_id = self._channel_to_id[channel]
@@ -150,7 +169,7 @@ class Discretizer:
 
         if self._store_masks:
             data = np.hstack([data, mask.astype(np.float32)])
-
+        data = np.nan_to_num(data, nan=0.0, posinf=0.0, neginf=0.0)
         # create new header
         new_header = []
         for channel in self._id_to_channel:
@@ -188,6 +207,30 @@ class Normalizer:
         self._sum_x = None
         self._sum_sq_x = None
         self._count = 0
+
+    def fit(self, X):
+        """
+        X shape: (N, T, F) or (N, F)
+        """
+        if X.ndim == 3:
+            X = X.reshape(-1, X.shape[-1])
+
+        self._feed_data(X)
+    
+    def save_params(self, save_file_path):
+        eps = 1e-7
+        N = self._count
+
+        self._means = 1.0 / N * self._sum_x
+        self._stds = np.sqrt(
+            1.0 / (N - 1) *
+            (self._sum_sq_x - 2.0 * self._sum_x * self._means + N * self._means**2)
+        )
+
+        self._stds[self._stds < eps] = eps
+
+        with open(save_file_path, "wb") as f:
+            pickle.dump({"means": self._means, "stds": self._stds}, f)
 
     def _feed_data(self, x):
         x = np.array(x)
@@ -228,4 +271,5 @@ class Normalizer:
         ret = 1.0 * X
         for col in fields:
             ret[:, col] = (X[:, col] - self._means[col]) / self._stds[col]
+        ret = np.nan_to_num(ret, nan=0.0, posinf=0.0, neginf=0.0)
         return ret

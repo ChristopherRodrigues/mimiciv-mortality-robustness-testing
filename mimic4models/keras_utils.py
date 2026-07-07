@@ -67,7 +67,7 @@ class DecompensationMetrics(keras.callbacks.Callback):
 
 
 class InHospitalMortalityMetrics(keras.callbacks.Callback):
-    def __init__(self, train_data, val_data, target_repl, batch_size=32, early_stopping=True, verbose=2):
+    def __init__(self, train_data, val_data, target_repl, batch_size=32, early_stopping=True, verbose=2, eval_model=None):
         super(InHospitalMortalityMetrics, self).__init__()
         self.train_data = train_data
         self.val_data = val_data
@@ -77,8 +77,30 @@ class InHospitalMortalityMetrics(keras.callbacks.Callback):
         self.verbose = verbose
         self.train_history = []
         self.val_history = []
+        self.eval_model = eval_model
 
     def calc_metrics(self, data, history, dataset, logs):
+        print("\n========== DATA STRUCTURE ==========")
+
+        print(type(data[0]))
+
+        if isinstance(data[0], list):
+            print("len(data[0]):", len(data[0]))
+            for j, item in enumerate(data[0]):
+                print(f"input {j}:", np.shape(item))
+        else:   
+            print(np.shape(data[0]))
+
+        print(type(data[1]))
+
+        if isinstance(data[1], list):
+            print("len(data[1]):", len(data[1]))
+            for j, item in enumerate(data[1]):
+                print(f"target {j}:", np.shape(item))
+        else:
+            print(np.shape(data[1]))
+
+        print("====================================\n")
         y_true = []
         predictions = []
         B = self.batch_size
@@ -89,7 +111,21 @@ class InHospitalMortalityMetrics(keras.callbacks.Callback):
                 (x, y, y_repl) = (data[0][i:i + B], data[1][0][i:i + B], data[1][1][i:i + B])
             else:
                 (x, y) = (data[0][i:i + B], data[1][i:i + B])
-            outputs = self.model.predict(x, batch_size=B)
+            #outputs = self.model.predict(x, batch_size=B, verbose=0)
+            model = self.eval_model if self.eval_model is not None else self.model
+            outputs = model.predict(x, batch_size=B, verbose=0)
+            print("Batch:")
+            print(type(x))
+
+            if isinstance(x, list):
+                print("Number of inputs:", len(x))
+                for i, arr in enumerate(x):
+                    print(f"Input {i} shape:", arr.shape)
+            else:
+                print(x.shape)
+            print("y shape:", np.shape(y))
+            print("outputs shape:", np.shape(outputs))
+            break
             if self.target_repl:
                 predictions += list(np.array(outputs[0]).flatten())
             else:
@@ -98,7 +134,13 @@ class InHospitalMortalityMetrics(keras.callbacks.Callback):
         print('\n')
         predictions = np.array(predictions)
         predictions = np.stack([1 - predictions, predictions], axis=1)
-        ret = metrics.print_metrics_binary(y_true, predictions)
+        print("predictions shape:", predictions.shape)
+        print("nan predictions:", np.isnan(predictions).sum())
+        print("inf predictions:", np.isinf(predictions).sum())
+
+        print("labels shape:", np.array(y_true).shape)
+        print("nan labels:", np.isnan(y_true).sum())
+        ret = metrics.print_metrics_binary(y_true, predictions, "Test Confusion Matrix", result_dir="C:/Users/chris/Thesis/mimic4-benchmarks/mimic4models/in_hospital_mortality/LSTM")
         for k, v in ret.items():
             logs[dataset + '_' + k] = v
         history.append(ret)
@@ -408,7 +450,8 @@ class Slice(Layer):
     """
 
     def __init__(self, indices, **kwargs):
-        self.supports_masking = True
+        self.supports_masking = False
+        #self.supports_masking = True
         self.indices = indices
         super(Slice, self).__init__(**kwargs)
 
@@ -423,7 +466,8 @@ class Slice(Layer):
         return (input_shape[0], input_shape[1], len(self.indices))
 
     def compute_mask(self, input, input_mask=None):
-        return input_mask
+        #return input_mask
+        return None
 
     def get_config(self):
         return {'indices': self.indices}

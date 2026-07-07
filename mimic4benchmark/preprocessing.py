@@ -51,7 +51,7 @@ def assemble_episodic_data(stays, diagnoses):
     data = {'Icustay': stays.ICUSTAY_ID, 'Age': stays.AGE, 'Length of Stay': stays.LOS,
             'Mortality': stays.MORTALITY}
     data.update(transform_gender(stays.GENDER))
-    data.update(transform_ethnicity(stays.ETHNICITY))
+    data.update(transform_ethnicity(stays.RACE))
     data['Height'] = np.nan
     data['Weight'] = np.nan
     data = DataFrame(data).set_index('Icustay')
@@ -274,7 +274,17 @@ clean_fns = {
     'pH': clean_lab,
     'Temperature': clean_temperature,
     'Weight': clean_weight,
-    'Height': clean_height
+    'Height': clean_height,
+    'Bilirubin': clean_lab,
+    'Creatinine': clean_lab,
+    'Hematocrit': clean_lab,
+    'Hemoglobin': clean_lab,
+    'Lactate': clean_lab,
+    'Platelets': clean_lab,
+    'Potassium': clean_lab,
+    'Prothrombin time': clean_lab,
+    'Sodium': clean_lab,
+    'White blood cell count': clean_lab
 }
 
 
@@ -292,3 +302,9 @@ def clean_events(events):
             print("values:", events[idx])
             exit()
     return events.loc[events.VALUE.notnull()]
+
+def clean_lab(df):
+    v = df.VALUE.copy()
+    idx = v.apply(lambda s: type(s) is str and not re.match(r'^(\d+(\.\d*)?|\.\d+)$', str(s)))
+    v.loc[idx] = np.nan
+    return v.astype(float)

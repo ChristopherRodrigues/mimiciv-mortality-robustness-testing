@@ -4,7 +4,8 @@ from __future__ import print_function
 import numpy as np
 from scipy.stats import skew
 
-all_functions = [min, max, np.mean, np.std, skew, len]
+all_functions = [min, max, np.mean, np.std]
+#all_functions = [min, max, np.mean, np.std, skew, len]
 
 functions_map = {
     "all": all_functions,
@@ -21,8 +22,10 @@ periods_map = {
     "first50percent": (2, 50)
 }
 
-sub_periods = [(2, 100), (2, 10), (2, 25), (2, 50),
-               (3, 10), (3, 25), (3, 50)]
+sub_periods = [(2, 100),
+               (3, 10), (3, 25)]
+#sub_periods = [(2, 100), (2, 10), (2, 25), (2, 50),
+#               (3, 10), (3, 25), (3, 50)]
 
 
 def get_range(begin, end, period):
@@ -77,3 +80,32 @@ def extract_features(data_raw, period, features):
     functions = functions_map[features]
     return np.array([extract_features_single_episode(x, period, functions)
                      for x in data_raw])
+
+def build_feature_names(header):
+    functions = ["min", "max", "mean", "std"]
+    subperiods = [
+        "full",
+        "last10%",
+        "last25%"
+    ]
+
+#def build_feature_names(header):
+#    functions = ["min", "max", "mean", "std", "skew", "count"]
+#    subperiods = [
+#        "full",
+#        "first10%",
+#        "first25%",
+ #       "first50%",
+ #       "last10%",
+#        "last25%",
+#       "last50%"
+#    ]
+
+    feature_names = []
+
+    for var in header[1:]:  # skip "Hours"
+        for sub in subperiods:
+            for func in functions:
+                feature_names.append(f"{var}_{sub}_{func}")
+
+    return feature_names
