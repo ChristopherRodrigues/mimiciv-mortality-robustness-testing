@@ -1,0 +1,190 @@
+Feature,MeanAbsSHAP
+Glascow coma scale verbal response_last10%_min,0.45244116
+Glascow coma scale motor response_last10%_max,0.17666624
+Creatinine_last10%_min,0.17433527
+ICU_Cardiac Vascular Intensive Care Unit (CVICU),0.16924869
+Glascow coma scale motor response_last25%_min,0.12812722
+White blood cell count_last10%_min,0.11644729
+Respiratory rate_last25%_mean,0.10834923
+Glascow coma scale motor response_last25%_max,0.09530583
+Weight_full_max,0.08712562
+Glascow coma scale motor response_full_std,0.08387099
+Temperature_full_min,0.075809166
+Temperature_full_max,0.07294094
+Hemoglobin_full_max,0.07266197
+Temperature_last25%_min,0.07188696
+Glascow coma scale eye opening_last10%_min,0.06905807
+Heart Rate_last10%_mean,0.068930164
+Prothrombin time_last10%_min,0.06862306
+Glascow coma scale eye opening_last10%_max,0.06667701
+Bilirubin_full_std,0.06583156
+Glucose_last25%_std,0.06344942
+Oxygen saturation_last25%_min,0.063396305
+Weight_full_mean,0.06223713
+Diastolic blood pressure_last10%_mean,0.06113417
+White blood cell count_full_min,0.060747236
+Diastolic blood pressure_last25%_mean,0.059638437
+Oxygen saturation_last10%_min,0.054950267
+Glascow coma scale eye opening_last25%_max,0.054089464
+Fraction inspired oxygen_last10%_max,0.053871244
+ICU_Neuro Intermediate,0.05322477
+Heart Rate_last25%_mean,0.0522505
+Oxygen saturation_full_min,0.051814336
+Glascow coma scale motor response_last10%_min,0.051249906
+Fraction inspired oxygen_last25%_min,0.050140236
+Glascow coma scale verbal response_full_std,0.04988518
+Prothrombin time_full_min,0.048600852
+Glucose_last10%_min,0.046992637
+Platelets_full_max,0.044978403
+Systolic blood pressure_full_mean,0.044895235
+Sodium_full_max,0.04392173
+ICU_Neuro Surgical Intensive Care Unit (Neuro SICU),0.043809112
+Potassium_last10%_min,0.043224525
+Lactate_last10%_min,0.043218523
+Glascow coma scale eye opening_full_mean,0.04321817
+Respiratory rate_full_max,0.040702153
+Hemoglobin_full_std,0.040200207
+Fraction inspired oxygen_last10%_min,0.038177308
+ICU_Medical/Surgical Intensive Care Unit (MICU/SICU),0.0366422
+Glascow coma scale verbal response_full_mean,0.036251888
+Hematocrit_full_std,0.036202922
+Bilirubin_full_min,0.035658795
+Systolic blood pressure_last25%_min,0.03541515
+Systolic blood pressure_full_min,0.035287768
+Creatinine_full_min,0.03526819
+Weight_full_min,0.03458859
+Platelets_full_mean,0.034303594
+Glucose_full_min,0.033542126
+Systolic blood pressure_last10%_mean,0.032696385
+Oxygen saturation_last10%_max,0.03233462
+Heart Rate_last25%_max,0.031762436
+Heart Rate_full_mean,0.03148819
+Diastolic blood pressure_last25%_max,0.031393144
+Hematocrit_last10%_min,0.031001018
+Respiratory rate_full_min,0.030881884
+Platelets_last10%_min,0.030054007
+Lactate_last25%_min,0.030039081
+Heart Rate_full_max,0.028979976
+Hemoglobin_full_mean,0.028760783
+Glascow coma scale eye opening_last10%_std,0.027497862
+Diastolic blood pressure_last10%_min,0.026381629
+Heart Rate_full_min,0.025159666
+pH_last10%_max,0.024735244
+Respiratory rate_last10%_mean,0.024392681
+Creatinine_full_std,0.024317842
+Glascow coma scale motor response_full_max,0.024207175
+Temperature_last10%_min,0.023636995
+White blood cell count_full_std,0.023598745
+Heart Rate_last25%_min,0.02335619
+Glascow coma scale verbal response_full_max,0.023079054
+Heart Rate_last10%_max,0.022809712
+Fraction inspired oxygen_full_min,0.022548715
+Diastolic blood pressure_full_min,0.022289969
+pH_last10%_std,0.022201171
+Heart Rate_last10%_min,0.022021383
+Prothrombin time_full_max,0.021532755
+Temperature_last25%_max,0.0212483
+Lactate_last25%_max,0.02110313
+pH_last10%_mean,0.020692023
+Glascow coma scale motor response_full_mean,0.020121384
+Temperature_last10%_max,0.019991374
+pH_full_min,0.01984327
+Fraction inspired oxygen_last25%_max,0.019725038
+Creatinine_full_mean,0.019477386
+Systolic blood pressure_last25%_mean,0.01928467
+Heart Rate_last25%_std,0.019161917
+Diastolic blood pressure_last10%_max,0.017688397
+Glascow coma scale eye opening_last25%_std,0.017182743
+Sodium_last10%_std,0.016971178
+Fraction inspired oxygen_full_max,0.016451353
+Platelets_full_min,0.016286707
+Sodium_full_mean,0.01597493
+Potassium_last25%_max,0.015841007
+Fraction inspired oxygen_full_mean,0.015770758
+Glascow coma scale eye opening_full_std,0.015666839
+Glucose_last10%_std,0.014826245
+Hematocrit_full_mean,0.014754283
+Glucose_full_max,0.014704089
+Platelets_last25%_std,0.014531397
+Diastolic blood pressure_full_mean,0.014472354
+pH_last10%_min,0.014010782
+Glascow coma scale eye opening_last25%_min,0.013756322
+Sodium_last10%_min,0.013548665
+Respiratory rate_last25%_min,0.013517703
+White blood cell count_last25%_std,0.013304784
+Mean blood pressure_last10%_max,0.0129228495
+Respiratory rate_last25%_max,0.01208212
+Potassium_last25%_min,0.011869882
+Mean blood pressure_last10%_min,0.011842441
+Glucose_full_mean,0.011563866
+pH_full_max,0.011423213
+Sodium_full_std,0.011413922
+Systolic blood pressure_last10%_min,0.011146667
+ICU_Surgical Intensive Care Unit (SICU),0.011067325
+Glucose_last25%_mean,0.01104809
+Glucose_last10%_mean,0.010854894
+Platelets_full_std,0.010774474
+Potassium_full_min,0.010637969
+Systolic blood pressure_last25%_max,0.010382229
+Hematocrit_full_max,0.010241313
+Mean blood pressure_full_min,0.010154703
+Heart Rate_last10%_std,0.009853923
+pH_last25%_min,0.009823972
+Potassium_full_std,0.0096987905
+Hematocrit_full_min,0.009445399
+Glascow coma scale eye opening_full_min,0.009368344
+pH_full_std,0.009239163
+Systolic blood pressure_last25%_std,0.0091825975
+Prothrombin time_full_mean,0.009131664
+Diastolic blood pressure_last25%_min,0.008443952
+Lactate_full_std,0.008157681
+Hemoglobin_full_min,0.008142344
+Systolic blood pressure_last10%_max,0.007788668
+Glascow coma scale verbal response_last10%_std,0.007730508
+pH_full_mean,0.007724641
+Diastolic blood pressure_full_max,0.007607574
+Creatinine_full_max,0.0075717773
+Lactate_last25%_std,0.0074623385
+Prothrombin time_full_std,0.007288218
+Glucose_last10%_max,0.0070769573
+Systolic blood pressure_full_max,0.006917408
+White blood cell count_full_max,0.0062439204
+Mean blood pressure_last25%_min,0.006221022
+Sodium_full_min,0.005999995
+Glucose_last25%_max,0.0057449397
+Glascow coma scale motor response_full_min,0.0056303623
+ICU_Trauma SICU (TSICU),0.0056085405
+Sodium_last25%_std,0.005460856
+ICU_Medical Intensive Care Unit (MICU),0.004921584
+Systolic blood pressure_last10%_std,0.00461307
+Respiratory rate_last10%_max,0.004536426
+Respiratory rate_last10%_min,0.004532858
+Potassium_full_mean,0.0044301823
+Lactate_full_mean,0.0040717535
+Lactate_full_max,0.0037364308
+Glascow coma scale motor response_last25%_std,0.0031585193
+Glascow coma scale verbal response_last25%_std,0.0029396233
+ICU_Coronary Care Unit (CCU),0.0027484265
+Lactate_full_min,0.0027126353
+pH_last25%_std,0.0026904792
+Potassium_full_max,0.002688754
+Glascow coma scale eye opening_full_max,0.002421059
+Hematocrit_last25%_std,0.0015113833
+Oxygen saturation_last25%_max,0.0014109631
+Glascow coma scale verbal response_full_min,0.0012931997
+Hemoglobin_last25%_std,0.0012699631
+Hematocrit_last10%_std,0.00030940355
+Glascow coma scale motor response_last10%_std,0.0
+Height_full_min,0.0
+Oxygen saturation_full_max,0.0
+Platelets_last10%_std,0.0
+Weight_last10%_std,0.0
+White blood cell count_last10%_std,0.0
+Weight_last25%_std,0.0
+ICU_Intensive Care Unit (ICU),0.0
+ICU_Medicine,0.0
+ICU_Neuro Stepdown,0.0
+ICU_PACU,0.0
+ICU_Neurology,0.0
+ICU_Surgery/Vascular/Intermediate,0.0
+ICU_Surgery/Trauma,0.0

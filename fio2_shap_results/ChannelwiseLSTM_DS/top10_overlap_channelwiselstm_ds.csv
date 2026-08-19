@@ -1,0 +1,2 @@
+Reference_Top10,HighFiO2_Top10,Overlap_Count,Overlap_Fraction
+"Creatinine, Potassium, Temperature, mask->pH, White blood cell count, mask->Fraction inspired oxygen, Glascow coma scale verbal response->Oriented, Prothrombin time, Systolic blood pressure, Diastolic blood pressure","Fraction inspired oxygen, Creatinine, Glascow coma scale motor response->Obeys Commands, mask->pH, Glascow coma scale verbal response->No Response-ETT, Potassium, White blood cell count, Lactate, Glascow coma scale verbal response->Oriented, Weight",5,0.5

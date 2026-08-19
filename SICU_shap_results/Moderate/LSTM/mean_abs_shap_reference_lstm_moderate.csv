@@ -1,0 +1,97 @@
+Feature,Mean_Abs_SHAP,Rank
+Bilirubin,0.0010068785476760823,1
+Creatinine,0.0005689739047430501,2
+Glascow coma scale verbal response->Oriented,0.000534219638186122,3
+Glascow coma scale verbal response->No Response-ETT,0.0004135980930297478,4
+mask->Fraction inspired oxygen,0.00040513532139212124,5
+Temperature,0.00040366700571336123,6
+mask->Glascow coma scale eye opening,0.0004023450833258864,7
+Fraction inspired oxygen,0.00039712664219283773,8
+Glascow coma scale motor response->Flex-withdraws,0.00039567395103434023,9
+Glascow coma scale motor response->Obeys Commands,0.00039473227648786024,10
+Systolic blood pressure,0.00038930480993947534,11
+Diastolic blood pressure,0.0003772733897098357,12
+Glascow coma scale eye opening->To Pain,0.000373002097280401,13
+Lactate,0.0003675844368440397,14
+Weight,0.00034865677022878063,15
+mask->Glascow coma scale verbal response,0.0003467571559327054,16
+Heart Rate,0.0003426025035669396,17
+White blood cell count,0.0003224106026971247,18
+Platelets,0.0003071182366651968,19
+mask->Glucose,0.00029691018478329484,20
+Glascow coma scale eye opening->To Speech,0.00027735382485713186,21
+mask->Glascow coma scale motor response,0.0002616945959641518,22
+Height,0.00025059070385732314,23
+Potassium,0.0002478641028041578,24
+mask->Prothrombin time,0.00024483938280010157,25
+Hemoglobin,0.00024169749324662911,26
+mask->pH,0.0002294770361602988,27
+mask->Temperature,0.00022671643283353268,28
+Glascow coma scale motor response->Localizes Pain,0.00020878134686828716,29
+Sodium,0.00020777160912050915,30
+Hematocrit,0.00019657372478706987,31
+mask->Hematocrit,0.00019477716864121136,32
+mask->Sodium,0.00019061203456942794,33
+Glascow coma scale verbal response->Confused,0.000180262993049089,34
+Prothrombin time,0.00017899969569153148,35
+Glascow coma scale eye opening->Spontaneously,0.00016801706605970208,36
+mask->Hemoglobin,0.00015015256322012816,37
+Glascow coma scale eye opening->4 Spontaneously,0.00014538533969196395,38
+mask->Bilirubin,0.00014339335046314552,39
+mask->White blood cell count,0.00012606580814041816,40
+Glascow coma scale motor response->No response,0.00012577871815872175,41
+mask->Lactate,0.00012252600981289968,42
+Glascow coma scale verbal response->Incomprehensible sounds,0.00011481661237210218,43
+Mean blood pressure,0.00010756468581900528,44
+mask->Creatinine,0.00010722056629018077,45
+mask->Potassium,0.00010580606848951568,46
+mask->Weight,9.8761118996194e-05,47
+mask->Platelets,9.67121277277643e-05,48
+Glascow coma scale verbal response->No Response,8.550529143686753e-05,49
+mask->Mean blood pressure,8.154382104829999e-05,50
+mask->Diastolic blood pressure,8.077007279047342e-05,51
+Oxygen saturation,7.553264539819064e-05,52
+mask->Systolic blood pressure,7.305898536488501e-05,53
+Respiratory rate,4.71065324221355e-05,54
+mask->Oxygen saturation,4.6159434220521555e-05,55
+Glascow coma scale verbal response->Inappropriate Words,4.320683457644461e-05,56
+mask->Heart Rate,4.246849916091209e-05,57
+Glucose,3.903646406697571e-05,58
+Glascow coma scale motor response->Abnormal extension,3.0484326892639136e-05,59
+mask->Respiratory rate,2.8654516772060023e-05,60
+Glascow coma scale motor response->6 Obeys Commands,1.6287163749577732e-05,61
+Glascow coma scale verbal response->5 Oriented,1.3507179586289924e-05,62
+Glascow coma scale motor response->Abnormal Flexion,1.0210592172775804e-05,63
+mask->Height,3.0204896999800706e-06,64
+pH,2.498036680774102e-08,65
+Glascow coma scale total->14,0.0,66
+Glascow coma scale total->12,0.0,67
+Glascow coma scale total->13,0.0,68
+Glascow coma scale total->10,0.0,69
+Glascow coma scale total->11,0.0,70
+Glascow coma scale motor response->2 Abnorm extensn,0.0,71
+Glascow coma scale motor response->5 Localizes Pain,0.0,72
+Glascow coma scale motor response->4 Flex-withdraws,0.0,73
+Capillary refill rate->1.0,0.0,74
+Capillary refill rate->0.0,0.0,75
+Glascow coma scale eye opening->1 No Response,0.0,76
+Glascow coma scale eye opening->None,0.0,77
+Glascow coma scale eye opening->2 To pain,0.0,78
+Glascow coma scale motor response->1 No Response,0.0,79
+Glascow coma scale motor response->3 Abnorm flexion,0.0,80
+Glascow coma scale eye opening->3 To speech,0.0,81
+Glascow coma scale total->15,0.0,82
+Glascow coma scale verbal response->2 Incomp sounds,0.0,83
+Glascow coma scale total->6,0.0,84
+Glascow coma scale verbal response->4 Confused,0.0,85
+Glascow coma scale verbal response->3 Inapprop words,0.0,86
+Glascow coma scale total->5,0.0,87
+Glascow coma scale total->3,0.0,88
+Glascow coma scale verbal response->1 No Response,0.0,89
+Glascow coma scale total->8,0.0,90
+Glascow coma scale total->9,0.0,91
+Glascow coma scale verbal response->1.0 ET/Trach,0.0,92
+Glascow coma scale total->7,0.0,93
+Glascow coma scale total->4,0.0,94
+mask->Glascow coma scale total,0.0,95
+mask->Capillary refill rate,0.0,96

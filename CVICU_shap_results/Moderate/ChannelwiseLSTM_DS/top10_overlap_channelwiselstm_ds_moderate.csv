@@ -1,0 +1,2 @@
+Reference_Top10,Perturbed_Top10,Overlap_Count,Overlap_Fraction
+"mask->Glucose, Glascow coma scale motor response->Obeys Commands, mask->pH, Glascow coma scale verbal response->Oriented, Creatinine, Glascow coma scale verbal response->No Response-ETT, mask->Oxygen saturation, Weight, mask->Hematocrit, Lactate","mask->Glucose, Glascow coma scale motor response->Obeys Commands, mask->pH, Creatinine, Glascow coma scale verbal response->Oriented, mask->Oxygen saturation, Glascow coma scale verbal response->No Response-ETT, Temperature, mask->Hematocrit, Weight",9,0.9

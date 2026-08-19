@@ -1,0 +1,2 @@
+Reference_Top10,HighFiO2_Top10,Overlap_Count,Overlap_Fraction
+"Creatinine, Bilirubin, mask->Fraction inspired oxygen, Temperature, White blood cell count, Weight, Heart Rate, Lactate, Platelets, Glascow coma scale verbal response->Oriented","Creatinine, Fraction inspired oxygen, mask->Fraction inspired oxygen, Glascow coma scale verbal response->No Response-ETT, Bilirubin, Temperature, Glascow coma scale verbal response->Oriented, Lactate, White blood cell count, Glascow coma scale motor response->Obeys Commands",7,0.7

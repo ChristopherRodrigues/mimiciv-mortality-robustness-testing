@@ -1,0 +1,11 @@
+Feature,Mean_Abs_SHAP_Reference,Mean_Abs_SHAP_Perturbed,Rank_Reference,Rank_Perturbed,SHAP_Change
+Temperature_full_min,0.08267109,0.14374793,9,4,0.061076835
+Temperature_full_max,0.07069186,0.099975355,15,9,0.029283494
+Heart Rate_last10%_mean,0.06510174,0.0855205,19,12,0.020418756
+Hemoglobin_full_max,0.07173109,0.088208936,14,10,0.016477846
+Temperature_last10%_max,0.020013498,0.035285506,89,53,0.015272008
+Heart Rate_full_mean,0.031266678,0.04197575,61,41,0.010709073
+Systolic blood pressure_full_mean,0.05198934,0.05905477,31,24,0.0070654303
+White blood cell count_full_min,0.06360842,0.0705465,20,15,0.0069380775
+Glucose_last25%_std,0.06310307,0.06944213,21,17,0.0063390583
+Heart Rate_last25%_max,0.0315796,0.037580192,59,48,0.0060005933

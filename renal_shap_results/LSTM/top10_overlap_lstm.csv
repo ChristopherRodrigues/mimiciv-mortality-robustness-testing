@@ -1,0 +1,2 @@
+Reference_Top10,HighCreatinine_Top10,Overlap_Count,Overlap_Fraction
+"Bilirubin, White blood cell count, Glascow coma scale verbal response->Oriented, Temperature, Fraction inspired oxygen, mask->Fraction inspired oxygen, Systolic blood pressure, Weight, Diastolic blood pressure, Heart Rate","Creatinine, Glascow coma scale verbal response->Oriented, Lactate, Temperature, Systolic blood pressure, Diastolic blood pressure, Glascow coma scale verbal response->No Response-ETT, White blood cell count, Weight, Glascow coma scale motor response->No response",6,0.6

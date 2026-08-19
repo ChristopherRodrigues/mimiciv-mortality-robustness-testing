@@ -1,0 +1,9 @@
+Model,Comparison,Spearman_Rho,P_Value,Top10_Overlap,Top10_Overlap_Fraction
+XGBoost,Reference (0.6-1.3) vs High (>=2.0),0.9671305924385432,3.743163296083319e-113,8,0.8
+LogisticRegression,Reference (0.6-1.3) vs High (>=2.0),0.9517300404988868,2.0881683699456828e-81,8,0.8
+Random Forest,Reference (0.6-1.3) vs High (>=2.0),0.8443680122291545,1.432119463094363e-52,6,0.6
+MLP,Reference (0.6-1.3) vs High (>=2.0),0.7730940827245419,8.010851192895636e-39,8,0.8
+LSTM,Reference (0.6-1.3) vs High (>=2.0),0.9761123168746608,3.997820017772229e-64,6,0.6
+LSTM_DS,Reference (0.6-1.3) vs High (>=2.0),0.9755561584373303,1.1644076908345874e-63,7,0.7
+ChannelwiseLSTM,Reference (0.6-1.3) vs High (>=2.0),0.976939772110689,7.769947285238598e-65,7,0.7
+ChannelwiseLSTM_DS,Reference (0.6-1.3) vs High (>=2.0),0.9758274552360283,6.933886956655869e-64,5,0.5

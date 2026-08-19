@@ -1,0 +1,9 @@
+Model,Severity,Spearman_Rho,P_Value,Top10_Overlap,Top10_Overlap_Fraction
+XGBoost,Moderate,0.994,1.3207837916787939e-182,8,0.8
+LogisticRegression,Moderate,0.998,2.5755574295384756e-181,7,0.7
+Random Forest,Moderate,0.967,1.0678459879365292e-112,9,0.9
+MLP,Moderate,0.955,2.4261804005818634e-100,9,0.9
+LSTM,Moderate,0.993,3.921583082389621e-89,7,0.7
+LSTM_DS,Moderate,0.999,7.512771777920398e-122,9,0.9
+ChannelwiseLSTM,Moderate,0.998,2.547400728856602e-114,8,0.8
+ChannelwiseLSTM_DS,Moderate,0.998,6.3365383567228835e-111,10,1.0
