@@ -503,7 +503,7 @@ def run_all_models_deep(
         icu,
         fio2_values,
         fio2_min=0.21,
-        fio2_max=0.30
+        fio2_max=0.50
     )
 
     (

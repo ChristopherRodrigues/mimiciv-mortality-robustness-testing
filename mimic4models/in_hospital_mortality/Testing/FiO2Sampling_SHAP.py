@@ -48,7 +48,7 @@ sys.path.append(
 # patient.
 #
 # Reference:
-#     0.21 <= FiO2 < 0.30
+#     0.21 <= FiO2 < 0.50
 #
 # High FiO2:
 #     FiO2 >= 0.50
@@ -58,7 +58,7 @@ sys.path.append(
 # ============================================================
 
 REFERENCE_FIO2_MIN = 0.21
-REFERENCE_FIO2_MAX = 0.30
+REFERENCE_FIO2_MAX = 0.50
 
 HIGH_FIO2_MIN = 0.50
 
@@ -975,7 +975,7 @@ def compare_shap(
 
     plt.title(
         "FiO2 Feature Attribution Change\n"
-        "Reference (0.21–0.30) → High FiO2 (≥0.50)"
+        "Reference (0.21–0.50) → High FiO2 (≥0.50)"
     )
 
     plt.tight_layout()
@@ -2171,7 +2171,7 @@ def main(
 
     print(
         "Reference population "
-        "(0.21 <= FiO2 < 0.30):",
+        "(0.21 <= FiO2 < 0.50):",
         len(X_reference_classical)
     )
 
@@ -2402,7 +2402,7 @@ def main(
 
     print(
         "Deep reference population "
-        "(0.21 <= FiO2 < 0.30):",
+        "(0.21 <= FiO2 < 0.50):",
         len(X_deep_reference)
     )
 
@@ -2635,7 +2635,7 @@ def main(
             "Model": model_name,
 
             "Comparison":
-                "Reference (0.21-0.30) vs "
+                "Reference (0.21-0.50) vs "
                 "High (>=0.50)",
 
             "Spearman_Rho":
